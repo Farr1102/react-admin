@@ -1,6 +1,3 @@
-import { AppConfig } from '@/types/config'
-import { AppModeEnum, ThemeEnum } from '@/enums/appEnum'
-
 export interface UserInfo {
   userId: string | number
   username: string
@@ -39,14 +36,6 @@ export interface BreadcrumbState {
 }
 
 export interface TagsState {
-  tagsList: MenuOptions[]
+	tagsList: MenuOptions[]
   tagsActive: string
-}
-
-export interface AppState {
-  appMode?: AppModeEnum
-
-  themeMode?: ThemeEnum
-
-  appConfig: AppConfig | null
 }

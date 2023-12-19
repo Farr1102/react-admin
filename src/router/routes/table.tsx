@@ -1,35 +1,35 @@
-import { lazy } from 'react'
-import { RouteObject } from '../types'
-import { LayoutGuard } from '../guard'
-import { LazyLoad } from '@/components/LazyLoad'
+import { lazy } from "react";
+import { RouteObject } from "../types";
+import { LayoutGuard } from "../guard";
+import { LazyLoad } from "@/components/LazyLoad";
 
 // table module page
 const TableRoute: RouteObject = {
-  path: '/table',
+  path: "/table",
   element: <LayoutGuard />,
   meta: {
-    title: '表格',
-    icon: 'table',
+    title: "表格",
+    icon: "table",
     orderNo: 3
   },
   children: [
     {
-      path: 'table-basic',
-      element: LazyLoad(lazy(() => import('@/views/table/table-basic'))),
+      path: "table-basic",
+      element: LazyLoad(lazy(() => import("@/views/Table/TableBasic"))),
       meta: {
-        title: '基础表格',
-        key: 'tableBasic'
+        title: "基础表格",
+        key: "tableBasic"
       }
     },
     {
-      path: 'table-edit-row',
-      element: LazyLoad(lazy(() => import('@/views/table/table-edit-row'))),
+      path: "table-edit-row",
+      element: LazyLoad(lazy(() => import("@/views/Table/TableEditRow"))),
       meta: {
-        title: '可编辑行表格',
-        key: 'tableEditRow'
+        title: "可编辑行表格",
+        key: "tableEditRow"
       }
     }
   ]
-}
+};
 
-export default TableRoute
+export default TableRoute;

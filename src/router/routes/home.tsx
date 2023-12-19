@@ -1,30 +1,16 @@
-import { RouteObject } from '../types'
-import { LayoutGuard } from '../guard'
-import Home from '@/views/home'
-
+import { RouteObject } from "../types";
+import { LayoutGuard } from "../guard";
+import Home from "@/views/Home";
 // Home route
 const HomeRoute: RouteObject = {
-  path: '/home',
+  path: "/home",
   element: <LayoutGuard />,
   meta: {
-    title: '首页',
-    icon: 'home',
+    title: "首页",
+    icon: "home",
     orderNo: 1,
     hideChildrenInMenu: true
-  },
-  children: [
-    {
-      path: '',
-      element: <Home />,
-      meta: {
-        title: '首页',
-        key: 'home',
-        icon: 'home',
-        orderNo: 1,
-        hideMenu: true
-      }
-    }
-  ]
-}
+  }
+};
 
-export default HomeRoute
+export default HomeRoute;

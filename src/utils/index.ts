@@ -1,5 +1,3 @@
-import { isObject } from './is'
-
 export function openWindow(
   url: string,
   opt?: {
@@ -17,10 +15,16 @@ export function openWindow(
   window.open(url, target, feature.join(','))
 }
 
-export function promiseTimeout(ms: number, throwOnTimeout = false, reason = 'Timeout'): Promise<void> {
+export function promiseTimeout(
+  ms: number,
+  throwOnTimeout = false,
+  reason = 'Timeout',
+): Promise<void> {
   return new Promise((resolve, reject) => {
-    if (throwOnTimeout) setTimeout(() => reject(reason), ms)
-    else setTimeout(resolve, ms)
+    if (throwOnTimeout)
+      setTimeout(() => reject(reason), ms)
+    else
+      setTimeout(resolve, ms)
   })
 }
 
@@ -33,12 +37,4 @@ export const searchRoute: any = (path: string, routes: any = []) => {
     }
   }
   return ''
-}
-
-export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
-  let key: string
-  for (key in target) {
-    src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key])
-  }
-  return src
 }

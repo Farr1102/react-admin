@@ -1,31 +1,24 @@
-import { FC } from 'react'
-import { Result, Card , Button } from 'antd'
-import { useNavigate } from 'react-router-dom'
+import { FC } from "react";
+import { Result, Card, Button } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const Page403: FC = () => {
-  const navigate = useNavigate()
-
-  const goHome = () => {
-    navigate('/home')
-  }
+  const navigate = useNavigate();
 
   return (
-    <Card bordered={false}>
+    <div style={{ height: "100%" }} className="flex-center">
       <Result
-        status='403'
-        title='403'
-        subTitle='对不起，您没有权限访问此页面。'
+        status="403"
+        title="403"
+        subTitle="对不起，您没有权限访问此页面。"
         extra={
-          <Button
-            type='primary'
-            onClick={goHome}
-          >
+          <Button type="primary" onClick={() => navigate("/home")}>
             返回首页
           </Button>
         }
       />
-    </Card>
-  )
-}
+    </div>
+  );
+};
 
-export default Page403
+export default Page403;
